@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  tidy: go mod tidy
+
+  build:
+    deps: [tidy]
+    sources:
+      - ./**/*.go
+    generates:
+      - ./bin/htmx-sse-example
+    cmds:
+      - go build -o ./bin/htmx-sse-example .
+
+  run:
+    deps: [build]
+    cmds:
+      - ./bin/htmx-sse-example

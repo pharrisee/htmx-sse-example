@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX SSE Example</title>
+
+    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
+</head>
+
+<body>
+    <h1>Current Time</h1>
+    <div hx-ext="sse" sse-connect="/events?stream=time" sse-swap="message" hx-swap="innerHTML"></div>
+</body>
+
+</html>
