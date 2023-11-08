@@ -21,7 +21,7 @@ func main() {
 	// create a new stream, in this case we're sending a stringified time
 	sseServer.CreateStream("time")
 
-	go publishEvents(sseServer)
+	go publishEvents(sseServer) // run the publisher as a background task
 
 	e := echo.New()
 	// add the required middleware to the echo server
