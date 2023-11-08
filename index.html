@@ -7,11 +7,13 @@
     <title>HTMX SSE Example</title>
 
     <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+    <!-- include the sse extension for htmx -->
     <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
 </head>
 
 <body>
     <h1>Current Time</h1>
+    <!-- use the sse extension, attach to the /events stream, swap the message into the innerHTML -->
     <div hx-ext="sse" sse-connect="/events?stream=time" sse-swap="message" hx-swap="innerHTML"></div>
 </body>
 
