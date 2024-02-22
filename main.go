@@ -36,8 +36,11 @@ func main() {
 		return c.File("index.html") // send a html file to the client
 	})
 
-	e.Start(":8080")
+	e.GET("/sse.html", func(c echo.Context) error {
+		return c.File("sse.html") // send a html file to the client
+	})
 
+	e.Start(":8080")
 }
 
 // publishEvents publishes a new event to the "time" stream every 5 seconds

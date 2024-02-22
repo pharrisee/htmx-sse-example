@@ -14,7 +14,7 @@
 <body>
     <h1>Current Time</h1>
     <!-- use the sse extension, attach to the /events stream, swap the message into the innerHTML -->
-    <div hx-ext="sse" sse-connect="/events?stream=time" sse-swap="message" hx-swap="innerHTML"></div>
+    <button hx-get="/sse.html" hx-swap="outerHTML">Get Time</button>
 </body>
 
 </html>
