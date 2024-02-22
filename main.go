@@ -36,8 +36,10 @@ func main() {
 		return c.File("index.html") // send a html file to the client
 	})
 
+	// create a new route for the sse.html file
 	e.GET("/sse.html", func(c echo.Context) error {
-		return c.File("sse.html") // send a html file to the client
+		c.Response().Header().Set("Hx-Push-URL", "/sse") // change url to /sse
+		return c.File("sse.html")                        // send a html file to the client
 	})
 
 	e.Start(":8080")
